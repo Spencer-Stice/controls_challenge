@@ -132,6 +132,8 @@ class TinyPhysicsSimulator:
     if step_idx >= CONTROL_START_IDX:
       action = self.controller.update(self.target_lataccel_history[step_idx], self.current_lataccel, self.state_history[step_idx])
     else:
+      # with open("new_pid_outputs.txt", "a") as file:
+      #   file.write(f"{self.controller.update(self.target_lataccel_history[step_idx], self.current_lataccel, self.state_history[step_idx])}, {self.target_lataccel_history[step_idx]}\n")
       action = self.data['steer_command'].values[step_idx]
     action = np.clip(action, STEER_RANGE[0], STEER_RANGE[1])
     self.action_history.append(action)

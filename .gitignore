@@ -2,3 +2,6 @@ __pycache__/
 data/
 report.html
 models/tinyphysics_*.onnx
+lstm_models
+new_pid_outputs.txt
+lstm_correction_models
